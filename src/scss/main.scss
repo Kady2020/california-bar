@@ -108,10 +108,7 @@ body {
 }
 
 //! Title
-.title-l {
-}
-
-.title-m {
+.title-h2 {
   font-size: 64px;
   text-transform: uppercase;
   text-align: center;
@@ -119,11 +116,11 @@ body {
 
   -webkit-text-stroke-width: 2px;
   -webkit-text-stroke-color: #fff;
-  text-shadow: 0 0 1px #fff, 0 0 2px #fff, 0 0 5px #fff, 0 0 11px $pinkColor, 0 0 20px $pinkColor, 0 0 30px $pinkColor,
-    0 0 55px $pinkColor, 0 0 80px $pinkColor;
+  animation: flicker 1.5s infinite alternate;
 
   @media (min-width: 767.98px) {
-    animation: flicker 1.5s infinite alternate;
+    text-shadow: 0 0 1px #fff, 0 0 2px #fff, 0 0 5px #fff, 0 0 11px $pinkColor, 0 0 20px $pinkColor, 0 0 30px $pinkColor,
+      0 0 55px $pinkColor, 0 0 80px $pinkColor;
   }
 
   @media (max-width: 767.98px) {
@@ -141,8 +138,5 @@ body {
     text-shadow: 0 0 1px #fff, 0 0 2px #fff, 0 0 5px #fff, 0 0 11px $pinkColor, 0 0 20px $pinkColor, 0 0 30px $pinkColor,
       0 0 55px $pinkColor, 0 0 80px $pinkColor;
   }
-}
-
-.title-s {
 }
 /*==================== REPEAT BLOCK ====================*/
