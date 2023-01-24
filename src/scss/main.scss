@@ -158,9 +158,17 @@ body {
     display: grid;
     grid-template: 1fr / 40%;
     align-items: center;
+
+    @media (max-width: 668.98px) {
+      grid-template: 1fr / 1fr;
+      place-items: center;
+    }
   }
 
   &__body {
+    > *:not(:last-child) {
+      margin: 0 0 40px 0;
+    }
   }
 
   &__title {
@@ -176,14 +184,23 @@ body {
     }
   }
 
+  &__title,
+  &__text {
+    @media (max-width: 668.98px) {
+      text-align: center;
+    }
+  }
+
   &__blur {
-    position: absolute;
-    width: 50%;
-    height: 100%;
-    top: 0;
-    left: 0;
-    z-index: -1;
-    backdrop-filter: blur(12px);
+    @media (min-width: 668.98px) {
+      position: absolute;
+      width: 50%;
+      height: 100%;
+      top: 0;
+      left: 0;
+      z-index: -1;
+      backdrop-filter: blur(12px);
+    }
   }
 
   &__cover {
