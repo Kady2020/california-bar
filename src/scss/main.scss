@@ -54,7 +54,7 @@ body {
   background: $blackBg;
   color: $whiteColor;
 
-  @media (max-width: 767.98px) {
+  @media (max-width: 768.98px) {
     &.lock {
       overflow: hidden;
     }
@@ -108,6 +108,7 @@ body {
 }
 
 //! Title
+.title-h1,
 .title-h2 {
   font-size: 64px;
   text-transform: uppercase;
@@ -116,11 +117,11 @@ body {
 
   -webkit-text-stroke-width: 2px;
   -webkit-text-stroke-color: #fff;
-  animation: flicker 1.5s infinite alternate;
 
-  @media (min-width: 767.98px) {
+  @media (min-width: 768.98px) {
     text-shadow: 0 0 1px #fff, 0 0 2px #fff, 0 0 5px #fff, 0 0 11px $pinkColor, 0 0 20px $pinkColor, 0 0 30px $pinkColor,
       0 0 55px $pinkColor, 0 0 80px $pinkColor;
+    animation: flicker 1.5s infinite alternate;
   }
 
   @media (max-width: 767.98px) {
@@ -140,3 +141,57 @@ body {
   }
 }
 /*==================== REPEAT BLOCK ====================*/
+
+//todo: INTRO
+
+.main {
+  &__intro {
+  }
+}
+
+.intro {
+  position: relative;
+  min-height: 100vh;
+
+  &__container {
+    min-height: 100vh;
+    display: grid;
+    grid-template: 1fr / 40%;
+    align-items: center;
+  }
+
+  &__body {
+  }
+
+  &__title {
+    @include respValue('font-size', 96, 36, 1);
+    text-align: left;
+  }
+
+  &__text {
+    @include respValue('font-size', 48, 24, 1);
+
+    span {
+      color: $pinkColor;
+    }
+  }
+
+  &__blur {
+    position: absolute;
+    width: 50%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    z-index: -1;
+    backdrop-filter: blur(12px);
+  }
+
+  &__cover {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    z-index: -2;
+  }
+}
