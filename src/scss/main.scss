@@ -185,6 +185,10 @@ body {
 
       position: relative;
       z-index: 3;
+
+      img {
+        max-width: 100%;
+      }
     }
   }
 }
@@ -207,6 +211,7 @@ body {
       visibility: visible;
     }
   }
+
   &__list {
     display: grid;
     grid-auto-flow: column;
@@ -218,6 +223,8 @@ body {
       grid-auto-flow: row;
       justify-items: center;
       gap: 50px;
+
+      margin: 0 0 60px 0;
     }
   }
 
@@ -333,11 +340,6 @@ body {
 }
 
 //todo: INTRO
-.main {
-  &__intro {
-  }
-}
-
 .intro {
   position: relative;
   min-height: 100vh;
@@ -399,5 +401,100 @@ body {
     top: 0;
     left: 0;
     z-index: -2;
+  }
+}
+
+//todo: EVENTS
+@import '../../node_modules/swiper/swiper';
+@import '../../node_modules/swiper/swiper-bundle';
+
+.events {
+  position: relative;
+  @include respValue('padding-top', 100, 40, 1);
+  @include respValue('padding-bottom', 100, 40, 1);
+
+  &__container {
+    display: grid;
+
+    &:not(:last-child) {
+      @include respValue('margin-bottom', 60, 30, 1);
+    }
+  }
+
+  &__title {
+    justify-self: center;
+    position: relative;
+
+    &::before {
+      content: '';
+      position: absolute;
+      width: 120px;
+      height: 100px;
+      top: 50%;
+      left: -120px;
+      transform: translate(0, -30%);
+      background: url('../img/events/arrow.png') 50% 50% / cover no-repeat;
+    }
+  }
+}
+
+.slider {
+  &__items {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(315px, 1fr));
+    justify-content: center;
+    gap: 30px;
+
+    max-width: 1290px;
+    padding: 0 15px;
+    margin: 0 auto;
+  }
+
+  &__item {
+    display: grid;
+    grid-template: auto auto 1fr / 1fr;
+
+    background: $blueBg;
+    border-radius: 20px;
+    overflow: hidden;
+  }
+
+  &__image {
+    padding: 0 0 99% 0;
+    &:not(:last-child) {
+      margin: 0 0 20px 0;
+    }
+  }
+
+  &__title {
+    font-size: 24px;
+    text-align: center;
+    letter-spacing: 0.2px;
+    color: $pinkColor;
+
+    &:not(:last-child) {
+      margin: 0 0 40px 0;
+    }
+  }
+
+  &__text {
+    font-family: $roboFont;
+    font-size: 20px;
+    letter-spacing: 0.2px;
+    line-height: 1.4;
+    padding: 0 15px 15px 15px;
+  }
+}
+
+.swiper-pagination-bullet {
+  background: $whiteColor;
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  overflow: hidden;
+
+  @media (max-width: 768.98px) {
+    width: 15px;
+    height: 15px;
   }
 }
