@@ -71,10 +71,15 @@ body {
 .main {
   flex: 1 1 auto;
 
-  .section-class,
-  .section-class {
+  &__events {
     &:not(:last-child) {
       @include respValue('margin-bottom', 60, 40, 1);
+    }
+  }
+
+  &__novelties {
+    &:not(:last-child) {
+      @include respValue('margin-bottom', 80, 0, 1);
     }
   }
 
@@ -121,7 +126,7 @@ body {
   @media (min-width: 768.98px) {
     text-shadow: 0 0 1px #fff, 0 0 2px #fff, 0 0 5px #fff, 0 0 11px $pinkColor, 0 0 20px $pinkColor, 0 0 30px $pinkColor,
       0 0 55px $pinkColor, 0 0 80px $pinkColor;
-    animation: flicker 1.5s infinite alternate;
+    // animation: flicker 1.5s infinite alternate;
   }
 
   @media (max-width: 767.98px) {
@@ -423,17 +428,20 @@ body {
 
   &__title {
     justify-self: center;
-    position: relative;
 
-    &::before {
-      content: '';
-      position: absolute;
-      width: 120px;
-      height: 100px;
-      top: 50%;
-      left: -120px;
-      transform: translate(0, -30%);
-      background: url('../img/events/arrow.png') 50% 50% / cover no-repeat;
+    @media (min-width: 1024.98px) {
+      position: relative;
+
+      &::before {
+        content: '';
+        position: absolute;
+        width: 120px;
+        height: 100px;
+        top: 50%;
+        left: -120px;
+        transform: translate(0, -30%);
+        background: url('../img/events/arrow.png') 50% 50% / cover no-repeat;
+      }
     }
   }
 }
@@ -496,5 +504,125 @@ body {
   @media (max-width: 768.98px) {
     width: 15px;
     height: 15px;
+  }
+}
+
+//todo: NOVELTIES
+.novelties {
+  &__title {
+    &:not(:last-child) {
+      @include respValue('margin-bottom', 130, 40, 1);
+    }
+  }
+
+  &__body {
+    display: grid;
+    gap: 30px;
+
+    @media (min-width: 768.98px) {
+      grid-template: 1fr / auto minmax(auto, 520px);
+    }
+  }
+
+  &__image {
+    position: relative;
+    padding: 0 0 82% 0;
+
+    @media (max-width: 768.98px) {
+      order: 1;
+      justify-self: center;
+      width: 100%;
+      max-width: 520px;
+      padding: 0 0 58% 0;
+    }
+
+    img {
+      border: 1px solid #ffffff;
+      box-shadow: 0px 0px 48px -1px $pinkColor;
+      border-radius: 20px;
+      overflow: hidden;
+    }
+
+    &::before {
+      content: '';
+      position: absolute;
+      width: 230px;
+      height: 230px;
+      top: -160px;
+      right: 0;
+      background: url('../img/novelties/star.png') 50% 50% / cover no-repeat;
+
+      @media (max-width: 962.98px) {
+        width: 150px;
+        height: 150px;
+        top: -100px;
+        right: 0;
+      }
+
+      @media (max-width: 768.98px) {
+        display: none;
+      }
+    }
+  }
+
+  &__buttons {
+  }
+
+  &__btn {
+  }
+
+  &__link {
+  }
+}
+
+.list {
+  display: grid;
+  gap: 30px;
+
+  @media (max-width: 768.98px) {
+    order: 2;
+  }
+
+  &__item {
+    display: grid;
+    grid-auto-flow: row;
+    gap: 20px;
+  }
+
+  &__price-name {
+    display: grid;
+    grid-template: 1fr / minmax(auto, 150px) 1fr auto;
+    justify-content: space-between;
+    align-items: end;
+    gap: 10px;
+
+    @media (max-width: 768.98px) {
+      grid-template: 1fr / minmax(auto, 150px) auto;
+    }
+  }
+
+  &__name {
+    @include respValue('font-size', 24, 20, 1);
+    color: $pinkColor;
+  }
+
+  &__decor {
+    height: 2px;
+    background: $whiteColor;
+
+    @media (max-width: 768.98px) {
+      display: none;
+    }
+  }
+
+  &__price {
+    @include respValue('font-size', 24, 20, 1);
+    color: $pinkColor;
+  }
+
+  &__description {
+    width: 300px;
+    align-self: end;
+    font-size: 18px;
   }
 }
