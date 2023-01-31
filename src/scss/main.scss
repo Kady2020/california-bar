@@ -509,6 +509,9 @@ body {
 
 //todo: NOVELTIES
 .novelties {
+  background: $blueBg;
+  padding: 40px 0;
+
   &__title {
     &:not(:last-child) {
       @include respValue('margin-bottom', 130, 40, 1);
@@ -518,6 +521,10 @@ body {
   &__body {
     display: grid;
     gap: 30px;
+
+    &:not(:last-child) {
+      @include respValue('margin-bottom', 80, 40, 1);
+    }
 
     @media (min-width: 768.98px) {
       grid-template: 1fr / auto minmax(auto, 520px);
@@ -566,12 +573,30 @@ body {
   }
 
   &__buttons {
+    display: grid;
+    grid-template: repeat(2, 1fr) / 1fr;
+    gap: 30px;
+
+    font-size: 24px;
+    text-align: center;
   }
 
   &__btn {
+    padding: 10px 20px;
+    border: 2px solid $pinkColor;
+    border-radius: 20px;
+    transition: all 0.2s linear;
+
+    &:hover {
+      border: 2px solid $whiteColor;
+      box-shadow: 0px 0px 48px -1px $pinkColor;
+    }
   }
 
   &__link {
+    justify-self: center;
+    text-transform: uppercase;
+    text-decoration: underline;
   }
 }
 
@@ -624,5 +649,38 @@ body {
     width: 300px;
     align-self: end;
     font-size: 18px;
+  }
+}
+
+//todo: DISCO
+.main {
+  &__disco {
+  }
+}
+.disco {
+  position: relative;
+  padding: 10.4% 0;
+
+  &__container {
+  }
+
+  &__title {
+    @include respValue('font-size', 48, 36, 1);
+    text-align: center;
+    color: $pinkColor;
+  }
+
+  &__text {
+    @include respValue('font-size', 36, 24, 1);
+    text-align: center;
+  }
+
+  &__bg {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    z-index: -1;
   }
 }

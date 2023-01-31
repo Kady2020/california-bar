@@ -1489,6 +1489,10 @@ button.swiper-pagination-bullet {
   }
 }
 
+.novelties {
+  background: #020f1c;
+  padding: 40px 0;
+}
 .novelties__title:not(:last-child) {
   margin-bottom: 130px;
 }
@@ -1500,6 +1504,14 @@ button.swiper-pagination-bullet {
 .novelties__body {
   display: grid;
   gap: 30px;
+}
+.novelties__body:not(:last-child) {
+  margin-bottom: 80px;
+}
+@media (max-width: 1290px) {
+  .novelties__body:not(:last-child) {
+    margin-bottom: calc(40px + 40 * ((100vw - 320px) / 970));
+  }
 }
 @media (min-width: 768.98px) {
   .novelties__body {
@@ -1547,6 +1559,29 @@ button.swiper-pagination-bullet {
     display: none;
   }
 }
+.novelties__buttons {
+  display: grid;
+  grid-template: repeat(2, 1fr)/1fr;
+  gap: 30px;
+  font-size: 24px;
+  text-align: center;
+}
+.novelties__btn {
+  padding: 10px 20px;
+  border: 2px solid #d6258f;
+  border-radius: 20px;
+  transition: all 0.2s linear;
+}
+.novelties__btn:hover {
+  border: 2px solid #fff;
+  box-shadow: 0px 0px 48px -1px #d6258f;
+}
+.novelties__link {
+  justify-self: center;
+  text-transform: uppercase;
+  text-decoration: underline;
+}
+
 .list {
   display: grid;
   gap: 30px;
@@ -1604,4 +1639,36 @@ button.swiper-pagination-bullet {
   width: 300px;
   align-self: end;
   font-size: 18px;
+}
+
+.disco {
+  position: relative;
+  padding: 10.4% 0;
+}
+.disco__title {
+  font-size: 48px;
+  text-align: center;
+  color: #d6258f;
+}
+@media (max-width: 1290px) {
+  .disco__title {
+    font-size: calc(36px + 12 * ((100vw - 320px) / 970));
+  }
+}
+.disco__text {
+  font-size: 36px;
+  text-align: center;
+}
+@media (max-width: 1290px) {
+  .disco__text {
+    font-size: calc(24px + 12 * ((100vw - 320px) / 970));
+  }
+}
+.disco__bg {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  z-index: -1;
 }
